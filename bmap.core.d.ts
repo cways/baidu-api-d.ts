@@ -283,7 +283,7 @@ declare namespace BMap{
         displayOnMinLevel?:number;
         displayOnMaxLevel?:number;
     }
-    export class Marker{
+    export class Marker extends Overlay{
         constructor(point:Point,opts?:MarkerOptions);
         openInfoWindow(infoWnd:InfoWindow):void;
         closeInfoWindow():void;
@@ -368,7 +368,7 @@ declare namespace BMap{
         addEventListener(event:string, handler:Function):void;
         removeEventListener(event:string, handler:Function):void;
     }
-    export class Polygon{
+    export class Polygon extends Overlay{
         constructor(points:Array<Point>,opts?:PolygonOptions);
         setPath(path:Array<Point>):void;
         getPath():Array<Point>;
@@ -456,7 +456,7 @@ declare namespace BMap{
         addEventListener(event:string, handler:Function):void;
         removeEventListener(event:string, handler:Function):void;
     }
-    export class Circle{
+    export class Circle extends Overlay{
         constructor(center:Point,radius:number,opts?:CircleOptions);
         setCenter(center:Point):void;
         getCenter():Point;
@@ -557,7 +557,7 @@ declare namespace BMap{
         addEventListener(event:string, handler:Function):void;
         removeEventListener(event:string, handler:Function):void;
     }
-    export class GroundOverlay{
+    export class GroundOverlay extends Overlay{
         constructor(bounds:Bounds,opts?:GroundOverlayOptions);
         setBounds(bounds:Bounds):void;
         getBounds():Bounds;
